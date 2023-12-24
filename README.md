@@ -1,4 +1,4 @@
-### FLAPPYTHON
+# FLAPPYTHON
 ## Une implémentation de NEAT sur un jeu de Flappy Bird
 
 En bas du fichier main.py, vous pouvez retrouver ce code : 
@@ -13,14 +13,14 @@ En bas du fichier main.py, vous pouvez retrouver ce code :
 `# # HUMAN :`
 `# game.run() # Uncomment this to play human game`
 
-## IA TRAINING
+### IA TRAINING
 La partie IA TRAINING va générer un réseau de neurone aléatoire de population X (à configurer dans le fichier de configuration de NEAT config-feedforward.txt)
-## IA LOAD & PLAY MODEL
+### IA LOAD & PLAY MODEL
 La partie IA LOAD & PLAY MODEL va chercher un fichier `winner.pkl` à la racine du projet et lancer une partie avec ce réseau de neuronnes. 
-## HUMAN :
+### HUMAN :
 Pour jouer soi même !
 
-### CONFIGURATION :
+## CONFIGURATION :
 
 Des paramètres sont modifiables afin de modifier le cours des parties et de l'entrainement. 
 
