@@ -4,21 +4,13 @@
 En bas du fichier main.py, vous pouvez retrouver ce code : 
 
 ### IA TRAINING
-`
-run(config_path)
-`
 La partie IA TRAINING va générer un réseau de neurone aléatoire de population X (à configurer dans le fichier de configuration de NEAT config-feedforward.txt)
 ### IA LOAD & PLAY MODEL
-`
-game.isLoaded = True
-run(config_path)
-`
 La partie IA LOAD & PLAY MODEL va chercher un fichier `winner.pkl` à la racine du projet et lancer une partie avec ce réseau de neuronnes. 
 ### HUMAN :
-`
-game.run()
-`
 Pour jouer soi même !
+
+Décommenter la partie qui vous concerne pour pouvoir jouer, entrainer un modèle ou en tester un déjà entrainé. 
 
 ## CONFIGURATION :
 
