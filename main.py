@@ -18,10 +18,10 @@ clock = pygame.time.Clock()
 
 #AI CONFIG
 SHOW_TRAINING = False
-MAX_GENERATION = 1000
+MAX_GENERATION = 100
 TRAINING_FPS = 120
 TARGET_SCORE = 500
-PLAYING_FPS = 120
+PLAYING_FPS = 60
 
 def initGame():
     game.birds.clear()
