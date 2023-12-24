@@ -3,15 +3,15 @@
 
 En bas du fichier main.py, vous pouvez retrouver ce code : 
 
-`# IA TRAINING
-run(config_path) # Uncomment this line to run an AI training session (unless game.isLoaded is True)
+`# IA TRAINING`
+`run(config_path) # Uncomment this line to run an AI training session (unless game.isLoaded is True)`
 
-# IA LOAD & PLAY MODEL:
-# game.isLoaded = True # Uncomment this line to load the winner.pkl file and run the game
-# run(config_path) # Uncomment this line to run an AI training session (unless game.isLoaded is True)
+`# IA LOAD & PLAY MODEL:`
+`# game.isLoaded = True # Uncomment this line to load the winner.pkl file and run the game`
+`# run(config_path) # Uncomment this line to run an AI training session (unless game.isLoaded is True)`
 
-# # HUMAN :
-# game.run() # Uncomment this to play human game`
+`# # HUMAN :`
+`# game.run() # Uncomment this to play human game`
 
 # IA TRAINING
 La partie IA TRAINING va générer un réseau de neurone aléatoire de population X (à configurer dans le fichier de configuration de NEAT config-feedforward.txt)
