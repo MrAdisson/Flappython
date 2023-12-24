@@ -140,9 +140,12 @@ if __name__ == "__main__":
     config_path = os.path.join(local_dir, 'config-feedforward.txt')
     
 
-# IA :
-game.isLoaded = True # Uncomment this line to load the winner.pkl file and run the game
+# IA TRAINING
 run(config_path) # Uncomment this line to run an AI training session (unless game.isLoaded is True)
+
+# IA LOAD & PLAY MODEL:
+# game.isLoaded = True # Uncomment this line to load the winner.pkl file and run the game
+# run(config_path) # Uncomment this line to run an AI training session (unless game.isLoaded is True)
 
 # # HUMAN :
 # game.run() # Uncomment this to play human game
