@@ -7,7 +7,7 @@ class Bird:
         self.y = y
         self.acceleration = 0
         self.speed = 0
-        self.jump_speed = 400 * 1 / 60
+        self.jump_speed = constants.JUMP_SPEED
         self.radius = constants.BIRD_RADIUS
         self.isDead = False
         self.score = 0

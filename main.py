@@ -7,6 +7,7 @@ from Pipes import Pipes, Pipe
 import events
 import constants
 import pickle
+import visualize
 
 # Set up the Pygame window
 pygame.init()
@@ -16,11 +17,12 @@ game = Game(screen)
 clock = pygame.time.Clock()
 # RUN 
 
+VISUALIZE_MODE = False
 #AI CONFIG
-SHOW_TRAINING = False
-MAX_GENERATION = 100
+SHOW_TRAINING = True
+MAX_GENERATION = 100000
 TRAINING_FPS = 120
-TARGET_SCORE = 500
+TARGET_SCORE = 700
 PLAYING_FPS = 60
 
 def initGame():
@@ -118,8 +120,16 @@ def run(config_path):
     stats = neat.StatisticsReporter()
     p.add_reporter(stats)
 
+
+
     if not game.isLoaded:
         winner = p.run(runGame, MAX_GENERATION)
+        if VISUALIZE_MODE:
+            visualize.draw_net(config, winner, True, node_names={-1:'Y', -2: 'DistanceToTopOfPipe', -3: 'DistanceToBottomOfPipe', 0:'Jump'}, filename="winner.gv")
+            visualize.plot_stats(stats, ylog=False, view=True)
+            visualize.plot_species(stats, view=True)
+    
+
         print('\nBest genome:\n{!s}'.format(winner))
         # save winner
         with open('winner.pkl', 'wb') as output:
@@ -131,23 +141,26 @@ def run(config_path):
         # OPEN WINNER FILE AND RUN WINNER GAME
         with open('winner.pkl', 'rb') as input_file:
             winner = pickle.load(input_file)
+            if VISUALIZE_MODE:
+                visualize.draw_net(config, winner, True, node_names={-1:'Y', -2: 'DistanceToTopOfPipe', -3: 'DistanceToBottomOfPipe', 0:'Jump'}, filename="winner.gv")
             runWinnerGame(winner, config)
+
 
 
 # PATH FOR CONFIG FILE
 if __name__ == "__main__":
     local_dir = os.path.dirname(__file__)
     config_path = os.path.join(local_dir, 'config-feedforward.txt')
-    
+             
 
-# IA TRAINING
+# # IA TRAINING
 run(config_path) # Uncomment this line to run an AI training session (unless game.isLoaded is True)
-
+     
 # IA LOAD & PLAY MODEL:
 # game.isLoaded = True # Uncomment this line to load the winner.pkl file and run the game
 # run(config_path) # Uncomment this line to run an AI training session (unless game.isLoaded is True)
 
 # # HUMAN :
-# game.run() # Uncomment this to play human game
+# game.run() # Uncomment this to pla      y human game
 
 

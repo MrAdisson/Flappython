@@ -75,6 +75,9 @@ class Game:
         screen.blit(text, text_rect)
 
     def run(self):
+        self.started = False
+        self.ended = False
+        self.running = True
         self.birds.append(Bird(self.screen.get_width() // 2, self.screen.get_height() // 2))
         from events import handle_events
         while self.running:
